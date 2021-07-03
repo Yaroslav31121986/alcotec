@@ -34,15 +34,8 @@ class Products extends Controller
         );
 
         if ($validator->fails()) {
-            $message = [];
-            $errors = $validator->errors();
-
-            foreach ($errors->all() as $error) {
-                $message[] = $error;
-            }
-
             return response()->json([
-                'message' => $message,
+                'message' => $validator->errors()->all(),
                 'status' => false
             ], 200);
         }

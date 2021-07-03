@@ -21,10 +21,10 @@
                         from: 500,
                         to: 10000000
                     },
-                    sorting: {
-                        sortBy: 'price',
-                        isDesc: false,
-                    }
+                    // sorting: {
+                    //     sortBy: 'price',
+                    //     isDesc: false,
+                    // }
                 }
             });
         });
