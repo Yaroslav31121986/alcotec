@@ -56,7 +56,10 @@ class Products extends Controller
                     break;
                 case 'sorting':
                     if (in_array('name', $value)) {
-                        $products->orderBy('name', (bool) $value['isDesc'] ? 'asc' : 'desc');
+                        $products->orderBy(
+                            'name',
+                            filter_var($value['isDesc'], FILTER_VALIDATE_BOOLEAN) ? 'asc' : 'desc'
+                        );
                     }
                     break;
             }
